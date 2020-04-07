@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+body{
+	margin:0px;
+	padding:0px;	
+	}
+
+
+#slider
+{
+	width:100%;
+	height:620px;
+	border:1px solid red;
+}
+#slides
+{
+	width:100%;
+	height:600px;
+	border:1px solid blue;
+
+
+}
+.slide
+{
+	width:100%;
+	height:600px;
+	background-position:center;
+	background-size:cover;
+	background-repeat:no-repeat;
+	position:absolute;
+}
+#slider1
+{
+	background-image:url('../../images.png');
+	visibility:hidden;
+}
+#slider2
+{
+	background-image:url('../../auaslp.png');
+	visibility:hidden;
+}
+
+#slider3
+{
+	background-image:url('../../Futbol_cancerbero_2.png');
+	visibility:hidden;
+}
+#menuSlider
+{
+	text-align:center;
+}
+
+#menuSlider a
+{
+	background-color:aqua;
+	padding-left:50px;
+	padding-right:50px;
+	text-decoration:none;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+#menuSlider a:hover
+{
+	background-color:#FF6600;
+}
+
+</style>
+
+<script type="text/javascript">
+var slideActual=1; //actualizar esta bandera
+function cargarSlider()
+{
+	var slides=document.getElementById("slides").children.length;
+	var s="";
+	s+= "<a href=\"#\" id=\"Previo\" onclick=\"javascript:cambiaSlide('Previo')\"> < </a>";	
+	for (i=0;i<slides;i++) s+="<a href=\"#\" id=\"idSlide"+(i+1)+"\" onclick=\"javascript:cambiaSlide('slider"+(i+1)+"' )\">"+(i+1)+" </a>";
+	s+= "<a href=\"#\" id=\"Siguiente\" onclick=\"javascript:cambiaSlide('Siguiente')\"> > </a>";	
+	document.getElementById("menuSlider").innerHTML=s;
+	}
+function cambiaSlide(s)
+{
+	alert(s);
+	slideActual=s;
+	
+}
+</script>
+</head>
+
+<body onload="cargarSlider()">
+<div id="slider">
+	<div id="slides">
+		<div class="slide" id="slider1"><a href="#"></a></div> 
+		<div class="slide" id="slider2"><a href="#"></a></div>
+		<div class="slide" id="slider3"><a href="#"></a></div>	
+	</div>
+	<nav id="menuSlider"></nav>
+</div>
+</body>
+
+</html>

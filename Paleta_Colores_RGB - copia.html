@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title> JavaScript Prueba 2 </title>
+
+<style type="text/css">
+    .cajaResultadoEstilo{
+        background-color: #cccccc;
+        border: 1px black dashed;
+        text-align: center;
+        width: 400px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    .colorTextoCss{
+        text-decoration-color: "rgb("+r+","+g+","+b+")";
+
+    }
+    
+</style>
+
+<script type="text/JavaScript">
+
+    function opciones() {
+        for(i = 0; i <= 255; i++){
+            document.write("<option value='"+i+"'>"+i+"</option>");
+        }
+    }
+
+    function Aplica_color() {
+        r = document.getElementById("r").value;
+        g = document.getElementById("g").value;
+        b = document.getElementById("b").value;
+
+        document.getElementById("cajaResultado").style.backgroundColor = "rgb("+r+","+g+","+b+")";
+    }
+
+    function Aplica_color_TxT() {
+        r = document.getElementById("r").value;
+        g = document.getElementById("g").value;
+        b = document.getElementById("b").value;
+
+        var text = document.getElementByName("texto").checked;
+        alert(text);
+
+        //document.getElementById("cajaResultado").style.backgroundColor = "rgb("+r+","+g+","+b+")";
+        document.getElementById("colorTexto").style.text-decoration-color = "rgb("+r+","+g+","+b+")";
+    }
+
+</script>
+
+</head>
+
+<body>
+
+    <p> R: <select id="r">
+        <option>
+            <script type="text/JavaScript">
+                opciones();
+            </script>
+        </option>
+    </select></p>
+
+    <p> G: <select id="g">
+        <option>
+            <script type="text/JavaScript">
+                opciones();
+            </script>
+        </option>
+    </select></p>
+
+    <p> B: <select id="b">
+        <option>
+            <script type="text/JavaScript">
+                opciones();
+            </script>
+        </option>
+    </select></p>
+
+
+    <form action="">
+        <input type="radio" name="texto" value="t"> Texto<br>
+        <input type="radio" name="fondo" value="f"> Fondo<br>
+      </form>
+    
+
+    <input type="button" value="Aplicar color" onclick="Aplica_color()"><br>
+    <div class="cajaResultadoEstilo" id="cajaResultado"><p class="colorTextoCss" id="colorTexto">ALAN</p></div>
+
+</body>
+</html>

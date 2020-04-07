@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<script src="https://kit.fontawesome.com/83b0530ef8.js"></script>
+<title>Untitled 2</title>
+<style type="text/css">
+.Primero
+{
+	float:left;
+}
+.caja
+{
+	border:1px solid #CCCCC;
+	box-shadow:2px 2px 2px 5px;
+	width:400px;
+	height:300px;
+	overflow:hidden;
+	
+}
+.capa
+{
+	width:400px;
+	height:300px;
+	background-color:#333333;
+	opacity:.6;
+	position:relative;
+	top:-304px;
+	opacity:0;
+	transition:opacity 1s;
+}
+
+.caja:hover .capa
+{
+	opacity:.6;
+}
+.enlace
+{
+	color:white;
+	text-decoration:none;
+	border:1px solid white;
+	position:relative;
+	top:-400px;
+	left:150px;
+	padding:20px;
+	border-radius:50px;
+	width:20px;
+	display:block;
+	opacity:0;
+	transform:scale(1.2);
+	transition:all .5s;
+}
+.caja:hover .enlace
+{
+	opacity:1;
+	top:-480px;
+	transform:scale(1);
+}
+.titulo
+{
+	width:400px;
+	height:100px;
+	background-color:#000000;
+	color:black;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+	position:relative;
+	top:-355px;
+	transition:top 1.2s;
+}
+.caja:hover .titulo
+{
+	top:-455px;
+}
+</style>
+</head>
+
+<body>
+<header>Portfilio</header>
+	<section class="Primero">
+		<div class="img1">
+			<img src="product-1-129x172.png" alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+		<div class="caja">
+			<img src="prueba.jpg" alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+	</section>
+	<section class="Segundo">
+		<div class="caja">
+			<img src="prueba.jpg" alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+		<div class="caja">
+			<img src="prueba.jpg" alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+	</section>
+</body>
+</html>

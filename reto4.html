@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+.Carta
+{
+	background-color:white;
+	border:1px black solid;
+	padding:50px 0px 50px 0px;
+	font-size:3em;
+	color: black;
+	width:400px;
+	text-align:center;
+	float: left;
+	margin-left:2px;
+	margin-bottom:2px;
+    
+}
+</style>
+<script type="text/javascript">
+function creaCartas()
+{
+var aleatorio;
+var arreglo = new Array(document.getElementById("num").value)
+if((document.getElementById("num").value%2)!=0)
+{
+    alert('Tiene que ser un numero par')
+}
+else
+{
+for(i = 0; i<arreglo.length; i++)
+{
+    arreglo[i] = 0;
+}
+aleatorio = Math.floor(Math.random() * document.getElementById("num").value)
+document.getElementById("espacio").innerHTML = "";
+for (i=1;i<=document.getElementById("num").value;i++) 
+document.getElementById("espacio").innerHTML += 
+"<div onclick=\"identificar('"+i+"')\" class=\"Carta\" id=\"c"+i+"\">"+i+"</div>";
+}
+
+}
+function identificar(c)
+{
+alert("Carta:" + c);
+}
+</script>
+</head>
+
+<body>
+Crea <input type="number" id="num"> Cartas 
+<input type="button" value="Crear Cartas" onclick="creaCartas()">
+<section id="espacio"></section>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+.sombreado
+{
+	
+	background-color:red;
+}
+.sinSombreado
+{
+	background-color:white;
+}
+</style>
+
+<script type="text/javascript">
+
+var i=0; //contador de filas
+var ultimaFila=0;
+function insertarRegistro()
+{
+	var tabla=document.getElementById("tabla");
+	
+	var tr=document.createElement("tr");
+	
+	var tdNombre=document.createElement("td");
+	var tdApellidos=document.createElement("td");
+	var tdOpciones=document.createElement("td");
+	
+	tr.setAttribute("id","f"+i);
+	tdNombre.innerHTML=document.getElementById("textNombre").value;
+	tdApellidos.innerHTML=document.getElementById("textApellidos").value;
+	//tdOpciones.innerHTML = "<a href=\"javascript:eliminar('f"+i+"')\">Eliminar</a> | 
+		//		<a href=\"javascript:seleccionar('f"+i+"')\">Seleccionar</a>";
+	tdOpciones.innerHTML="<a href=\"javascript:seleccionar('f"+i+"')\">Seleccionar</a> / <a href=\"javascript:eliminar('f"+i+"')\"> Eliminar </a>";
+	//<a href="#">404 page</a></li>
+ //"<a href="#">Seleccionar</a> / <a href=\"javascript:eliminar('f"+i+"')\"> Eliminar </a>"
+	
+	tr.appendChild(tdNombre);
+	tr.appendChild(tdApellidos);
+	tr.appendChild(tdOpciones);
+	tabla.appendChild(tr);
+	
+	i++;
+
+}
+
+function seleccionar(x)
+{
+	if(ultimaFila!='') document.getElementById(ultimaFila).setAttribute("class","sinSombreado");
+	fila=document.getElementById(x);
+	fila.setAttribute("class","sombreado");
+	ultimaFila=x;
+
+}
+function eliminar(x)
+{
+	fila=document.getElementById(x);
+	document.getElementById("tabla").removeChild(fila);
+}
+</script>
+</head>
+
+<body>
+Nombre: <input type="text" id="textNombre"> 
+Apellidos: <input type="text" id="textApellidos"><br>
+<input type="button" value="Añadir Registro" onclick="insertarRegistro()"><br>
+<hr>
+<h2>Listado de nombres</h2>
+
+<table id="tabla">
+	<tr id="0">
+	<td class="tdTitulo">Nombre</td>
+	<td class="tdTitulo">Apellido</td>
+	<td class="tdTitulo">Opciones</td>	
+	</tr>
+</table>
+</body>
+
+</html>

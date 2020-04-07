@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+body{
+}
+
+
+</style>
+<script type="text/javascript">
+function options()
+{
+	for(i=0;i<=255;i++) document.write("<option value='"+i+"'>"+i+"</option>");
+}
+function crearTabla()
+{
+	var espacio = document.getElementById("caja");
+	var f = document.getElementById("filas").value;
+	var c = document.getElementById("columnas").value;
+	var color = "rgb(" + document.getElementById("R").value + 
+					"," + document.getElementById("G").value + 
+					"," + document.getElementById("B").value +
+					")";
+
+	var tabla = "<table border=1>";
+	for(i=0;i<f;i++)
+	{
+		tabla += espacio.innerHTML = "<tr>";
+			for(j=0;j<c;j++)
+			{
+				if (document.getElementById("lugar").value=="texto")
+					tabla+="<td style=\"color:"+color+";\">"+i +"," + j+"</td>";
+				else
+					tabla+="<td style=\"background-color:"+ color +";\">"+i +"," + j+"</td>";
+			}
+		tabla+= "</tr>";
+	}
+	tabla += "</table>";
+	espacio.innerHTML = tabla;
+
+}
+function cambiaColor()
+{
+	var color = "rgb(" + document.getElementById("R").value + 
+					"," + document.getElementById("G").value + 
+					"," + document.getElementById("B").value +
+					")";
+	var tds = document.getElementsByTagName("td");
+	for(i=0;i<tds.length;i++)
+		if (document.getElementById("lugar").value=="texto")
+			tds[i].style.color = color;
+		else
+			tds[i].style.backgroundColor = color;
+
+}
+</script>
+</head>
+
+<body>
+	Crear tabla <input type="number" id="filas"> x <input type="number" id="columnas"> 
+	<input type="button" value="Crear" onclick="crearTabla()"><hr>
+	Color 
+	<select id="lugar">
+		<option value="texto">Texto</option>
+		<option value="fondo">Fondo</option>
+	</select>
+	R
+	<select id="R">
+		<script type="text/javascript">
+		 options();
+		</script>
+	</select>
+	 G
+	 <select id="G">
+		<script type="text/javascript">
+		 options();
+		</script>
+	</select>
+	B
+	<select id="B">
+		<script type="text/javascript">
+		 options();
+		</script>
+	</select><br>
+	<input type="button" value="Asigna color" onclick="cambiaColor()">
+	<hr>
+	<div id="caja"></div>
+</body>
+
+</html>
+
+
+
+
+
+

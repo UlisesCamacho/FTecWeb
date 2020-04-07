@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ae5fa391e4.js"></script>
+    <style type="text/css">
+    .Contenedor
+    {
+        width: 370px;
+        height: 360px;
+        overflow: hidden;
+        float: right;
+        
+        
+    }
+    .body
+    {
+        background-color: red;
+    }
+    .mascara
+    {
+        width: 270px;
+        height: 250px;
+        background-color: gray;
+        position: relative;
+        opacity: 0;
+        transition: all 0.3s ease-in;
+        border-radius: 10px;
+    }
+    .Contenedor h1{
+        width: 100%;
+        text-transform: uppercase;
+        font-family: 'Open Sans', sans-serif;
+        font-size: .8em;
+        position: relative;
+        top: -1px;
+        transition: all 1s ease-in;
+    }
+    .Contenedor:hover h1{
+        top: -140px;
+    }
+    .Contenedor:hover .logo
+    {
+        top: -130px;
+        opacity: 1;
+    }
+    .contenedor p
+    {
+        width: 100%;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        text-transform: uppercase;
+        background-color: black;
+        font-style: italic;
+        font-size: 17px;
+        position: relative;
+        top: -300px;
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+    .contenedor a{
+        color: white;
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        width: 1px;
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 0px auto;
+        font-weight: bold;
+        font-size: 14pt;
+        position: relative;
+        top: -200px;
+        opacity: 0;
+        transition: all is ease .7s;
+    }
+   
+    .contenedor img{
+        transform: scale(3);
+    }
+    .contenedor:hover img{
+        transform: scale(2.2);
+        transition: all 1s linear;
+        top:-455px;
+
+    }
+    .contenedor:hover h1{
+        opacity: 1;
+        
+    }
+    .contenedor:hover .mascara
+    {
+        opacity: .7;
+        transition: all 1s linear;
+    }
+    .contenedor:hover img
+    {
+        opacity: 1;
+        transition: all 1s linear;
+    }
+    .img1{
+        width: 270px;
+        height: 250px;
+        position: relative;
+        background-image:url('product-1-129x172.png');
+        border-radius: 1px;
+        
+
+    }
+    .img1:hover .mascara
+    {
+        opacity: 0.2;
+        transition: all 0.3s linear;
+    }
+
+    .img2:hover .mascara
+    {
+        opacity: 0.2;
+        transition: all 0.3s linear;
+    }
+    .img3:hover .mascara
+    {
+        opacity: 0.2;
+        transition: all 0.3s linear;
+    }
+         .img a{
+        width: 270px;
+        height: 250px;
+        display: block;
+        position: relative;
+        top: -250px;
+        
+    }
+    .Servicios
+    {
+        width: 94%;
+        height: 350px;
+        position: relative;
+        
+    }
+    .Servicios>p{
+        
+    position: absolute;
+	top: 45%;
+	left: 50%;
+	height: 30%;
+	width: 50%;
+	margin: -15% 0 0 -25%;
+    color: #5b5b60;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.56em; 
+    }
+    .img2
+    {
+        width: 270px;
+        height: 250px;
+        position: relative;
+        background-image:url('product-2-160x155.png');
+        border-radius: 1px;
+
+    }
+     .img3
+    {
+        width: 270px;
+        height: 250px;
+        
+        background-image:url('product-4-140x168.png');
+        border-radius: 1px;
+    }
+     .Titulo
+    {
+        font-family: "Monserrat", sans-serif;
+        margin-right: 80%;
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: none;
+        font-style: normal;
+        letter-spacing: -1.7px;
+		
+    }
+    .Primero
+{
+	float:left;
+}
+.caja
+{
+	border:1px solid #CCCCC;
+	box-shadow:2px 2px 2px 5px;
+	width:400px;
+	height:300px;
+	overflow:hidden;
+	
+}
+.capa
+{
+	width:400px;
+	height:300px;
+	background-color:#333333;
+	opacity:.6;
+	position:relative;
+	top:-304px;
+	opacity:0;
+	transition:opacity 1s;
+}
+
+.caja:hover .capa
+{
+	opacity:.6;
+}
+.enlace
+{
+	color:white;
+	text-decoration:none;
+	border:1px solid white;
+	position:relative;
+	top:-400px;
+	left:150px;
+	padding:20px;
+	border-radius:50px;
+	width:20px;
+	display:block;
+	opacity:0;
+	transform:scale(1.2);
+	transition:all .5s;
+}
+.caja:hover .enlace
+{
+	opacity:1;
+	top:-480px;
+	transform:scale(1);
+}
+.titulo
+{
+	width:400px;
+	height:100px;
+	background-color:#000000;
+	color:black;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+	position:relative;
+	top:-355px;
+	transition:top 1.2s;
+}
+.caja:hover .titulo
+{
+	top:-455px;
+}
+
+</style>
+</head>
+<body>
+    <section class="Servicios">
+        <h1 class="Titulo">Trending Products</h1>
+         <div class="Contenedor">
+            <div class="img2">
+                <div class="mascara"></div>
+                <a href="#"></a>
+            </div>
+            <h2>Pendant Lamp</h2>
+          </div>
+        <div class="Contenedor">
+            <div class="img1">
+                <div class="mascara"></div>
+                <a href="#"></a>
+            </div>
+            <h2>Garden Tablet</h2>
+         </div>
+        <div class="Contenedor">
+            <div class="img3">
+                <div class="mascara"></div>
+                <a href="#"></a>
+            </div>
+            <h2>Club Chair</h2>
+         </div>
+</section>
+<header>Portfilio</header>
+	<section class="Primero">
+		<div class="img1">
+			<img src="portada-silla-inca-400x300.jpg" alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+		<div class="caja">
+			<img src="portada-silla-inca-400x300.jpg "alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+	</section>
+	<section class="Segundo">
+		<div class="caja">
+			<img src="portada-silla-inca-400x300.jpg"  alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+		<div class="caja">
+			<img src="portada-silla-inca-400x300.jpg " alt="">
+			<div class="capa"></div>
+			<a class="enlace" href="#"> <i class="fas fa-link fa-flip-horizontal"></i></a>
+			<div class="titulo"> <a href="#">Enlace a Pagina Web</a></div>
+		</div>
+	</section>
+
+    
+
+</body>
+</html>

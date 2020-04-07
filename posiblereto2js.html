@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+ <style>
+       .body {
+           padding-top: 40px;
+           padding-left: 40px;
+       }
+
+       .caja {
+       	position: absolute;
+        background-color: aqua;
+        text-align: center;
+        width: 60px;
+
+       }
+      .zona_boton {
+        text-align: center;
+        width: 100%;
+        margin-top: 240px;
+      }
+
+   </style>
+</head>
+<body>
+    <input type="button" onclick='setInterval("correr()",60)' value="mover caja">	
+    <div class="body">
+	<div class="caja" id="caja"><p class="colorTextoCss" id="colorTexto">ulises</p></div>
+	<div class="zona_boton">
+	</div>
+    </div>
+    <script>	  
+      var caja = document.getElementById("caja");
+      var x_caja = 0;
+      function correr() {
+    	if (x_caja <= 85 && x_caja >= 0) { //condición para que se mueva entre estos valores de la pantalla
+		x_caja = x_caja + 2; //movimiento del valor x
+		caja.style.left = x_caja + "%"; //aplicar el valor obtenido al left del elemento
+	    }
+	    else 
+	    { 
+	    x_caja=86; //posicion final
+		}
+      }
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="">
+
+
+.celda
+{
+	width:50px;
+	text-align:center;
+	border:1px solid gray;
+}
+</style>
+<script type="text/javascript">
+function creaTabla()
+{
+	var aux;
+	f = document.getElementById("filas").value;
+	c = document.getElementById("celdas").value;
+	t = "<table>";
+	for(i=0;i<parseInt(f);i++)
+		{
+			t += "<tr>";
+			for(j=0;j<parseInt(c);j++)
+			{
+			 
+			 t+="<td class='celda' onclick='obtenclick_colorea(this)' id='"+i+""+j+" '>"+i+","+j+"</td>";
+			}
+			t += "</tr>";	
+		}
+	t += "</table>";
+	document.getElementById("espacio").innerHTML = t;
+}
+function colorea()
+{
+	var celdas = document.getElementsByTagName("td");
+//	for(i=0; i<celdas.length; i++)
+//	{
+		celdas[3].style.backgroundColor = document.getElementById("color").value;
+//	}
+		
+}
+function obtenclick_colorea(b)
+{
+	
+	var a=b.id;
+//	alert(a);
+	var auxiliar=document.getElementById(a);
+	auxiliar.style.backgroundColor = document.getElementById("color").value;
+			
+}
+
+
+</script>
+</head>
+
+<body>
+filas: <input type="text" id="filas"> Celdas: <input type="text" id="celdas"><br>
+<input type="button" value="Crear tabla" onclick="creaTabla()"><br>
+Selecciona el color: <input type="color" id="color">
+<p>Da click en la celda para asignar el color</p>
+<hr>
+<div id="espacio"></div>
+
+
+
+
+
+</body>
+
+</html>

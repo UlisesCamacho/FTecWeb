@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+body{
+	margin:0px;
+	padding:0px;
+}
+#slider
+{
+	width:100%;
+	height:620px;
+}
+#slides
+{
+	width:100%;
+	height:600px;
+}
+.slide
+{
+	width:100%;
+	height:600px;
+	background-position:center;
+	background-size:cover;
+	background-repeat:no-repeat;
+	position:absolute;
+	transition: background 2s, transform 2s;
+	
+}
+
+#menuSlider
+{	text-align:center;
+}
+#menuSlider a
+{
+	width:100px;
+	height:100px;
+	background-color:aqua;
+	padding-left:50px;
+	padding-right:50px;
+	text-decoration:none;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+#menuSlider a:hover
+{
+	background-color:#FF6600;
+}
+#slide0
+{
+ background-image:url('img1.jpg');
+ visibility:hidden;
+}
+#slide1
+{
+ background-image:url('img2.jpg');
+ visibility:hidden;
+}
+#slide2
+{
+ background-image:url('img3.jpg');
+ visibility:hidden;
+}
+#slide3
+{
+ background-image:url('img1.jpg');
+ visibility:hidden;
+}
+
+</style>
+<script type="text/javascript">
+var slideActual=0;
+function cargaSlider()
+{
+	var slides = document.getElementById("slides").children.length;
+	var s = "";
+	s += "<a href=\"#\" id=\"idSlidePrevio\" onclick=\"javascript:cambiaSlide('previo')\"><</div>";
+	for(i=0;i<slides;i++)
+		s += "<a href=\"#\" id=\"idSlide"+(i+1)+"\" onclick=\"javascript:cambiaSlide('"+i+"')\">"+(i+1)+"</div>";
+	s += "<a href=\"#\" id=\"idSlidePosterior\" onclick=\"javascript:cambiaSlide('posterior')\">></div>";
+	document.getElementById("menuSlider").innerHTML = s;
+	document.getElementById("slide" + slideActual).style.visibility="visible"; //mostrar el primero
+	
+}
+function cambiaSlide(s)
+{
+	var tam = document.getElementById("slides").children.length;
+	var aux=tam-1;
+	 if(s=='previo')
+    {
+    //	alert("si es previo");
+    	s=slideActual;
+   		s--;
+   		
+	   		if(s < 0)
+	   	{
+	        slideActual = 0;
+	        s=aux;
+	 //       alert("si es menor");
+	    }
+    
+    }
+     if(s=='posterior')
+    {
+    	//alert("si es posterior");
+    	s = slideActual;
+   		s++;
+   		
+	   		if(s > aux)
+	   	{
+	        slideActual = aux;
+	        s=0;
+	      //  alert("si es mayor");
+	    }
+    
+    }
+
+//	alert("a qui slideActual vale: " + slideActual);
+	document.getElementById("slide" + slideActual).style.transform="rotate(0deg)";
+
+
+	document.getElementById("slide" + slideActual).style.visibility="hidden"; //ocultar
+//	alert("aqui s vale: " + s);
+	
+ // transform: rotate(180deg);
+	document.getElementById("slide" + s).style.visibility="visible"; // mostrar
+	//
+	document.getElementById("slide" + s).style.transform="rotate(360deg)";
+
+    slideActual=s;
+//    alert(" el valor de s: " + s + " el valor de slideActual: " + slideActual);	
+}
+
+</script>
+</head>
+
+<body  onload="cargaSlider()">
+<div id="slider">
+	<div id="slides">
+		<div class="slide" id="slide0"><a href="#"></a></div>
+		<div class="slide" id="slide1"><a href="#"></a></div>
+		<div class="slide" id="slide2"><a href="#"></a></div>
+		<div class="slide" id="slide3"><a href="#"></a></div>
+	</div>
+	<nav id="menuSlider">
+	</nav>
+</div>
+</body>
+
+</html>
