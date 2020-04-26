@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/83b0530ef8.js"></script>
+    <title>CanCerberoFut</title>
+    <link href="colors.css" rel="stylesheet" type="text/css" />
+    <link href="estandar.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body onload="cargaslider()">
+<header>
+    <div id="encabezado">
+        <div id="logo">
+        <a href="#"><img id="imagenLogo" src="logoCancerberoPagina.jpg">
+        </a>
+        </div>
+        <div id="lrrsb">
+        <div id="lr"><a href="#" >login</a>/<a href="#">registrer</a></div>
+        <div id="rs">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane"></i></a>			
+        
+        </div>
+        <div id="b">
+            <form method="get" action="https://www.google.com/search" target="_blank">
+                <input type="search" name="q" placeholder="Término a buscar" autofocus required>
+                <input type="submit" > <i class="fas fa-search"></i>
+                </form> 
+        </div>
+    
+    </div>
+    
+  
+
+</header>
+<div class="navbar">
+    
+    <div class="subnav">
+      <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="#company">Company</a>
+        <a href="#team">Team</a>
+        <a href="#careers">Careers</a>
+      </div>
+    </div> 
+    <div class="subnav">
+      <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="#bring">Bring</a>
+        <a href="#deliver">Deliver</a>
+        <a href="#package">Package</a>
+        <a href="#express">Express</a>
+      </div>
+    </div> 
+    <div class="subnav">
+      <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+      <div class="subnav-content">
+        <a href="#link1">Link 1</a>
+        <a href="#link2">Link 2</a>
+        <a href="#link3">Link 3</a>
+        <a href="#link4">Link 4</a>
+      </div>
+    </div>
+    <div class="subnav">
+        <button class="subnavbtn">Equipos <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#link4">Bring</a>
+          <a href="#link5">Deliver</a>
+          <a href="#link6">Package</a>
+          
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">Ligas <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#bring">Bring</a>
+          <a href="#deliver">Deliver</a>
+          <a href="#package">Package</a>
+          <a href="#express">Express</a>
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">Calendario <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#bring">Bring</a>
+          <a href="#deliver">Deliver</a>
+          <a href="#package">Package</a>
+          <a href="#express">Express</a>
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">Tablas<i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="#bring">Bring</a>
+          <a href="#deliver">Deliver</a>
+          <a href="#package">Package</a>
+          <a href="#express">Express</a>
+        </div>
+      </div>      
+  </div>
+  <div id="slider">
+	<div id="slides">
+		<div class="slide" id="slide0"><a href="#"></a></div>
+		<div class="slide" id="slide1"><a href="#"></a></div>
+		<div class="slide" id="slide2"><a href="#"></a></div>
+		<div class="slide" id="slide3"><a href="#"></a></div>
+	</div>
+	<nav id="menuSlider">
+	</nav>
+</div>
+<script type="text/javascript">
+var slideActual=0;
+window.onload=function cargaSlider()
+{
+	var slides = document.getElementById("slides").children.length;
+	var s = "";
+	s += "<a href=\"#\" id=\"idSlidePrevio\" onclick=\"javascript:cambiaSlide('previo')\"><</div>";
+	for(i=0;i<slides;i++)
+		s += "<a href=\"#\" id=\"idSlide"+(i+1)+"\" onclick=\"javascript:cambiaSlide('"+i+"')\">"+(i+1)+"</div>";
+	s += "<a href=\"#\" id=\"idSlidePosterior\" onclick=\"javascript:cambiaSlide('posterior')\">></div>";
+	document.getElementById("menuSlider").innerHTML = s;
+
+	document.getElementById("slide" + slideActual).style.visibility="visible"; //mostrar el primero
+	
+	//slideActual=1;
+	setInterval('actualiza()',3000);	
+
+}
+function actualiza()
+{	
+	slid=slideActual
+	cambiaSlide(slid+=1);
+}
+
+function cambiaSlide(s)
+{
+	var tam = document.getElementById("slides").children.length;
+	var aux=tam-1;
+	 if(s=='previo')
+    {
+    //	alert("si es previo");
+    	s=slideActual;
+   		s--;
+   		
+    
+    }
+     if(s=='posterior')
+    {
+    	//alert("si es posterior");
+    	s = slideActual;
+   		s++;
+   		
+	   		    
+    }
+    		if(s < 0)
+	   	{
+	        slideActual = 0;
+	        s=aux;
+	 //       alert("si es menor");
+	    }
+		
+			if(s > aux)
+	   	{
+	        slideActual = aux;
+	        s=0;
+	      //  alert("si es mayor");
+	    }
+	    
+		
+		document.getElementById("slide" + slideActual).style.visibility="hidden"; //ocultar
+		
+		document.getElementById("slide" + s).style.visibility="visible"; // mostrar
+	
+		
+    	slideActual=s;
+    
+
+}
+</script>
+
+</body>
+</html>
