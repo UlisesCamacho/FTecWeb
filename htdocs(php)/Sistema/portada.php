@@ -34,14 +34,19 @@ if(isset($_SESSION['idUsuario']))
 
 //conectar a la BD
 $conn = mysqli_connect("localhost","root","","tecweb20192020");
-$qry = "select idImagen, Nombre, idUsuario, Titulo, Fecha from imagenes";
+//$qry = "select idImagen, Nombre, idUsuario, Titulo, Fecha from imagenes";
+$qry = "select i.idImagen, i.Nombre as nombreImagen, u.idUsuario as idU, u.Nombre as nombreUsuario, i.Fecha
+		from imagenes as i inner join usuarios as u on i.idUsuario = u.idUsuario";
 $resultado = mysqli_query($conn,$qry);
 if(mysqli_num_rows($resultado)>0)   //si hay imagenes en la BD
 {
 	$i=1;
 	while($registro = mysqli_fetch_array($resultado))
 	{
-		echo $i . " - " . $registro["Fecha"] . " - " . $registro["Nombre"] . " - " . $registro["Titulo"] . "<br>";
+		//echo $i . " - " . $registro["Fecha"] . " - " . $registro["Nombre"] . " - " . $registro["Titulo"] . "<br>";
+		echo "<img width = '100px' src = 'imagen.php?idI=" . $registro["idImagen"] . "'><br>
+		$i - [" . $registro["Fecha"] . "] - " . $registro["nombreImagen"] . 
+		" <a href = 'eliminarImagen.php?idI=" . $registro["idImagen"] . "'>Eliminar Imagen</a><br>";
 		$i++;	
 	}
 }
