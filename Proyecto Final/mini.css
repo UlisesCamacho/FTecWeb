@@ -1,0 +1,98 @@
+.display-mini{
+	display:inherit !important;
+}
+.encabezado
+{
+    border: 1px solid red;
+    height: 120px;
+    display: flex;
+    
+}
+.logo
+{
+    border: 1px solid black;
+    width:50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+     
+}
+#lrrsb{
+    width: 50%;
+    height: 100%;
+    margin-top: 0%;
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+#lrrsb > div{
+    margin: 0px;
+}
+.imagenLogo
+{
+    border: 1px solid red;
+    height:100px; 
+    width: 100px;
+    margin:0px auto;
+    
+}
+#rs a i{
+    font-size: 13px;
+   
+    color: black;
+}
+.menuHeader nav ul li a{
+    color: gray;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: block;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 10px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    border: 1px solid black;
+    background-color: black;
+    
+   
+   }
+
+
+.menuHeader nav{
+    width: 80%;
+    height: 100%;
+    left: -100%;
+    margin: 0;
+    position: fixed;
+}
+.menuHeader nav ul li {
+    display: block;
+    float: none;
+    border-bottom: 1px solid white;
+}
+.menu_bar{
+    display: block;
+    width: 100%;
+    background: #ccc;
+
+}
+.menu_bar .bt-menu{
+    display: block;
+    padding-left: 20px;
+    background: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    
+}
+.menu_bar i {
+    float: left;;
+    font-size:20px;
+}

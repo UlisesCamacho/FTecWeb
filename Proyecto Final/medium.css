@@ -1,0 +1,107 @@
+.display-medium{
+	display:inherit !important;
+}
+.encabezado
+{
+    border: 1px solid red;
+    height: 150px;
+	display: flex;
+	justify-content:center;
+    
+}
+.logo
+{
+    border: 1px solid black;
+	width:15%;
+	display: flex;
+	align-items: center;
+    justify-content:center;
+}
+.imagenLogo
+{
+    border: 1px solid red;
+    height:100px; 
+    width: 160px;
+    margin:0px auto;
+    
+}
+#lr a{
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+#rs a i{
+    font-size: 15px;
+    margin-left:10px;
+    color: black;
+}
+#lrrsb{
+    display: flex;
+    
+    margin-right: 5%;
+    margin-top: 5%;
+    height: 40px;
+    width: 405px;
+    float: right;
+	border:1px solid black;
+	align-items: center;
+	justify-content:center;
+	justify-content: flex-end;
+}
+#rs{
+	
+    margin-top: 1%;
+    margin-bottom: 1px;
+   border: 1px solid blue;
+   
+}
+.menuHeader{
+    width: 100%;
+    border: 1px solid red;
+    background-color: black;
+}
+.menuHeader nav{
+    width: 90%;
+    max-width: 1000px;
+    margin: 10px auto;
+    background: black;
+    height: 20px;
+   
+
+}
+.menu_bar{
+    display: none;
+}
+.menuHeader nav ul{
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+}
+.menuHeader nav ul li{
+    float: left;
+}
+
+.menuHeader nav ul li a{
+ color: gray;
+ padding-right: 15px;
+ padding-left: 15px;
+ display: block;
+ text-decoration: none;
+ padding-top: 5px;
+ padding-bottom: 10px;
+ font-size: 10px;
+ font-family: sans-serif;
+ text-transform: uppercase;
+ border: 1px solid black;
+ background-color: black;
+ 
+
+}
+.menuHeader nav ul li i{
+    margin-right: 0;
+}
+.menuHeader nav ul li a:hover{
+    border-bottom: 2px solid white;
+    color: white;
+}
