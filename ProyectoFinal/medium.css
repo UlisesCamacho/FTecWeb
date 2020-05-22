@@ -25,14 +25,19 @@
     margin:0px auto;
     
 }
-#lr a{
+.lr{
+    margin-top: 1%;
+    margin-bottom: 1px;
+    font-size: 10px;
+}
+.lr a{
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
 }
 #rs a i{
-    font-size: 15px;
+    font-size: 19px;
     margin-left:10px;
     color: black;
 }

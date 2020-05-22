@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +22,22 @@
                 </a>
             </div>
         </div>
-
-        <div id="lrrsb">
-          <div class="lr display-great display-medium"><a href="login.php" >login</a>/<a href="#">registrer</a></div>
-          <div class="lr display-mini"><a href="#" >L</a><strong>/</strong><a href="#">R</a></div>
+        
+                 <div id='lrrsb'>
+                 <?php 
+            if(!isset($_SESSION['idUsuario']))
+            {
+                echo "<div class='lr display-great display-medium'><a href='login.php' >login</a>/<a href='registro.php'>registrer</a></div>";
+                echo "<div class='lr display-mini'><a href='login.php' >L</a><strong>/</strong><a href='registro.php'>R</a></div>";
+            }
+            else
+            {
+                echo "<div class='lr display-great display-medium'><a href='perfil.php' ><i class='fas fa-user'></i>". ' ' . $_SESSION['NombreUsuario'] ."</a></div>";
+                echo "<div class='lr display-mini'><a href='perfil.php' ><i class='fas fa-user'></i>". ' ' . $_SESSION['NombreUsuario'] ."</a></div>";
+                 
+            }
+?>
+                    
                <div id="rs">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -38,7 +53,9 @@
                             <input type="submit" > <i class="fas fa-search"></i>
                         </form> 
            </div>
+          
         </div>
+        
         
     </div>
     
@@ -48,13 +65,37 @@
         </div>
         <nav>
             <ul>
-               <li><a href="#">Perfil</a></li>
-               <li><a href="#">Ligas</a></li> 
-               <li><a href="#">Calendario</a></li> 
-               <li><a href="#">Tablas</a></li> 
-               <li><a href="#">Galeria</a></li>
-               <li><a href="#">Acerca de</a></li>
-               <li><a href="#">Contacto</a></li>    
+               
+               
+                        <li><a href="#">Perfil</a></li>
+                        <li><a href="ligas.php">Ligas</a></li>
+                        <li><a href="calendario.php">Calendario</a></li> 
+                        <li><a href="tablas.php">Tablas</a></li>
+                        <li><a href="galeria.php">Galeria</a></li>
+                        <li><a href="acercade.php">Acerca de</a></li>
+                        
+                     
+                        <?php 
+                         if(!isset($_SESSION['idUsuario']))
+                         {
+                            echo "<li><a href='#'>Contacto</a></li>";   
+                         }
+                         else
+                         {
+                            $aux=$_SESSION['Rol'];
+                            if($aux=="Administrador")
+                            {
+                                echo "<li><a href='admi.php'>Admi</a></li>"; 
+                            }
+                            else{
+                                echo "<li><a href='#'>Contacto</a></li>";
+                            }
+                         }
+                         
+                           
+                        ?>
+                    
+              
             </ul>
         </nav>
 
@@ -62,7 +103,8 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="menu.js"></script>
  <!--seccion slider primero-->
- <h2>Visitar la Galeria</h2>
+ <div class="tituloGaleria"><h2>Ver Galeria</h2>
+ </div>
  <div class="sliderPrimero">
     <ul>
         <li>
@@ -81,7 +123,7 @@
 </div>
 
 <!--noticias-->
-<h2>NEWS</h2>
+<div class="tituloNoticias"><h2>Noticias</h2></div>
 <div class="noticias">
         <div class="caja"><img src="fut0.jpg" alt="">
 			<div class="capa"></div>
@@ -124,12 +166,9 @@
 </div>
 <!--Segundo Slider-->
 
-
-
-
-<h2>Pie de pagina</h2>
 <footer>
-    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem unde veniam error laboriosam minus dolor at soluta quibusdam officia sunt omnis, sed accusantium repellat reprehenderit alias natus officiis molestias ut?</h2>
+    <div class="pieDePagina"><p><h2><strong>Derechos Reservados</strong> </h2></p> <h3>A los efectos de la presente Ley se entenderá por programa de ordenador toda secuencia de instrucciones o indicaciones destinadas a ser utilizadas, directa o indirectamente, en un sistema informático para realizar una función o una tarea o para obtener un resultado determinado, cualquiera que fuere su forma de expresión y fijación.A los mismos efectos, la expresión programas de ordenador comprenderá también su documentación preparatoria. La documentación técnica y los manuales de uso de un programa gozarán de la misma protección que este Título dispensa a los programas de ordenador.</h3></div>
+   
 </footer>
 </body>
 </html>
