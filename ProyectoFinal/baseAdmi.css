@@ -1,0 +1,358 @@
+.display-great{
+    display:none;
+    
+}
+.display-medium{
+	display:none
+}
+.display-mini{
+	display:none;
+}
+.encabezado
+{
+    
+    height: 150px;
+    display: flex;
+    justify-content:space-between;
+    background-color: black;
+    border-bottom: 1px solid white;
+   
+}
+body
+{
+    margin: 0;
+    background-color: white;
+}
+header{
+    width: 100%;
+    
+    
+}
+#btn-menu{
+    display: none;
+}
+header label{
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-right: black;
+}
+header label:hover{
+    cursor: pointer;
+    background:rgba(0,0,0,0.3);
+}
+.logo
+{
+    
+    width:25%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+     
+}
+
+.imagenLogo
+{
+    
+    height:120px; 
+    width: 200px;
+    margin:0px auto;
+    
+}
+.usuarioLogeado{
+   
+    
+    width: 90px;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 80px;
+    margin-left: 350px;
+   
+    
+
+    
+}
+.usuarioLogeado i{
+    font-size: 20px;
+}
+.usuarioLogeado p{
+    font-size: 10px;
+    text-align: right;
+}
+#lrrsb{
+    display: flex;
+    
+    margin-right: 5%;
+    margin-top: 5%;
+    height: 40px;
+    width: 605px;
+    float: right;
+    
+}
+#lrrsb > div{
+    margin: 10px;
+}
+.lr{
+    margin-top: 1%;
+    margin-bottom: 1px;
+    font-size: 15px;
+    
+}
+.lr a {
+    text-transform: uppercase;
+    font-size: 19px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+    
+}
+#admiEnlace a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+  
+    text-decoration: none;
+}
+#admiEnlace a:hover{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    text-decoration: none;
+}
+#rs{
+    margin-top: 1%;
+    margin-bottom: 1px;
+    
+    
+}
+
+#rs a i{
+    font-size: 20px;
+    margin-left:10px;
+    color: black;
+}
+
+#rs a i:hover{
+    color: gray;
+  }
+.lr a:hover {
+  color: gray;
+}
+
+.menuHeader{
+    width: 100%;
+    border: 1px solid black;
+    background-color: black;
+}
+.menuHeader nav{
+    width: 90%;
+    max-width: 1000px;
+    margin: 10px auto;
+    background: black;
+    height: 20px;
+   
+
+}
+.menu_bar{
+    display: none;
+}
+.menuHeader nav ul{
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+}
+.menuHeader nav ul li{
+    float: left;
+}
+
+.menuHeader nav ul li a{
+ color: gray;
+ padding-right: 20px;
+ padding-left: 20px;
+ display: block;
+ text-decoration: none;
+ padding-top: 3px;
+ padding-bottom: 3px;
+ font-size: 18px;
+ font-family: sans-serif;
+ font-weight: lighter;
+ text-transform: uppercase;
+ border: 1px solid black;
+ background-color: black;
+ 
+
+}
+.menuHeader nav ul li i{
+    margin-right: 0;
+}
+.menuHeader nav ul li a:hover{
+    border-bottom: 2px solid white;
+    color: white;
+}
+/*titulo galeria*/
+.tituloGaleria
+{
+    width: 95%;
+	margin: auto;
+    overflow: hidden;
+    height: 40px;
+    border-bottom: 2px solid black;
+    text-align: center;
+
+}
+/*titulo noticias*/
+.tituloNoticias
+{
+    width: 85%;
+	margin: auto;
+    overflow: hidden;
+    height: 40px;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+/*slider primero*/
+.sliderPrimero {
+	width: 95%;
+	margin: auto;
+    overflow: hidden;
+    
+}
+
+.sliderPrimero ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: cambio 15s infinite alternate linear;
+}
+
+.sliderPrimero li {
+	width: 100%;
+	list-style: none;
+}
+
+.sliderPrimero img {
+    width: 100%;
+    height: 500px;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+/*noticias seccion*/
+.noticias{
+    width: 95%;
+    margin: auto;
+    display: flex;
+ 
+    flex-flow: row wrap;
+    align-content: space-around;
+    
+    
+}
+.nota{
+    margin: auto;
+    margin-top: 20px;
+    width: 40%;
+    
+    height: 300px;
+    
+}
+
+.caja
+{
+
+    margin: auto;
+    margin-top: 20px;
+    width: 40%;
+    height: 300px;
+	border:1px solid black;
+
+	overflow:hidden;
+	
+}
+.capa
+{
+	width:100%;
+	height:300px;
+	background-color:#333333;
+	opacity:.6;
+	position:relative;
+	top:-304px;
+	opacity:0;
+	transition:opacity 1s;
+}
+
+.caja:hover .capa
+{
+	opacity:.6;
+}
+.enlace
+{
+	color:white;
+	text-decoration:none;
+	border:1px solid white;
+	position:relative;
+	top:-400px;
+	left:45%;
+	padding:20px;
+	border-radius:60px;
+	width:15px;
+	display:block;
+	opacity:0;
+	transform:scale(1.2);
+	transition:all .5s;
+}
+.caja:hover .enlace
+{
+	opacity:1;
+	top:-480px;
+	transform:scale(1);
+}
+.titulo
+{
+	width:100%;
+	height:100px;
+	background-color:white;
+	color:black;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+	position:relative;
+	top:-355px;
+    transition:top 1.2s;
+    opacity: .5;
+}
+.caja:hover .titulo
+{
+	top:-455px;
+}
+/* Contenedor del login */
+
+
+/*noticias*/
+
+/*footer*/
+footer{
+    margin-top: 40px;
+    background-image: url("wallFutbol.jpg");
+    color: white;
+}
+.pieDePagina
+{
+    width: 100%;
+	margin: auto;
+    overflow: hidden;
+    text-align: center;
+    color:white
+}

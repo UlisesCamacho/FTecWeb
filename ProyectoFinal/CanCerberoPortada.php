@@ -67,7 +67,7 @@ session_start();
             <ul>
                
                
-                        <li><a href="#">Perfil</a></li>
+                        <li><a href="CanCerberoPortada.php">Inicio</a></li>
                         <li><a href="ligas.php">Ligas</a></li>
                         <li><a href="calendario.php">Calendario</a></li> 
                         <li><a href="tablas.php">Tablas</a></li>
@@ -78,7 +78,7 @@ session_start();
                         <?php 
                          if(!isset($_SESSION['idUsuario']))
                          {
-                            echo "<li><a href='#'>Contacto</a></li>";   
+                            echo "<li><a href='contacto.php'>Contacto</a></li>";   
                          }
                          else
                          {
@@ -88,7 +88,7 @@ session_start();
                                 echo "<li><a href='admi.php'>Admi</a></li>"; 
                             }
                             else{
-                                echo "<li><a href='#'>Contacto</a></li>";
+                                echo "<li><a href='contacto.php'>Contacto</a></li>";
                             }
                          }
                          
@@ -103,18 +103,67 @@ session_start();
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="menu.js"></script>
  <!--seccion slider primero-->
- <div class="tituloGaleria"><h2>Ver Galeria</h2>
+ <?php 
+//echo "<p><a href='agregaImagen.php'>Cargar imagen</a></p>";
+include ("funciones.php");
+$conn = ConectarBD(); //mysqli_connect("localhost","root","","cancerberodb");
+$qry = "select idImagen, Nombre, idUsuario, Titulo, Fecha from imagenes";
+//$qry = "select i.idImagen, i.Nombre as nombreImagen, u.idUsuario as idU, u.Nombre as nombreUsuario, i.Fecha
+//from imagenes as i inner join usuarios as u on i.idUsuario=u.idUsuario AND i.idUsuario='".$_SESSION['idUsuario']."'";
+$resultado = mysqli_query($conn,$qry);
+if(mysqli_num_rows($resultado)>0)   //si hay imagenes en la BD
+{
+	$i=1;
+	while($registro = mysqli_fetch_array($resultado))
+	{
+		//echo $i . " - " . $registro["Fecha"] . " - " . $registro["Nombre"] . " - " . $registro["Titulo"] . "<br>";
+        if($i==1)
+        {
+            $imagen1=$registro['idImagen'];
+        }
+        if($i==2)
+        {
+            $imagen2=$registro['idImagen'];
+        }
+        if($i==3)
+        {
+            $imagen3=$registro['idImagen'];
+        }
+        if($i==3)
+        {
+            $imagen4=$registro['idImagen'];
+        }
+		$i++;	
+	}
+}
+	else
+	{
+		echo "No hay imágenes guardadas en la BD";
+	}
+
+//conectar a la BD
+?>
+ <div class="tituloGaleria"><a href="galeria.php"><h2>Ver Galeria</h2></a>
  </div>
  <div class="sliderPrimero">
     <ul>
-        <li>
-<img src="pumas0.jpg" alt="">
+        <li> <?php 
+     
+        echo "<img src='imagen.php?idI=".$imagen1."'>";
+        ?>
+
 </li>
         <li>
-<img src="pumas1.jpg" alt="">
+        <?php 
+    
+        echo "<img src='imagen.php?idI=".$imagen2."'>";
+        ?>
 </li>
         <li>
-<img src="pumas2.jpg" alt="">
+        <?php 
+       
+        echo "<img src='imagen.php?idI=".$imagen3."'>";
+        ?>
 </li>
         <li>
 <img src="pumas3.jpg" alt="">
@@ -123,42 +172,42 @@ session_start();
 </div>
 
 <!--noticias-->
-<div class="tituloNoticias"><h2>Noticias</h2></div>
+<div class="tituloNoticias"><h2>Resultados y Partidos</h2></div>
 <div class="noticias">
         <div class="caja"><img src="fut0.jpg" alt="">
 			<div class="capa"></div>
 			<a class="enlace" href="#"> <i class="fas fa-futbol"></i></a>
-            <div class="titulo"> <a href="#">Ver noticias</a></div>
+            <div class="titulo"> <a href="calendario.php">Ver Partidos</a></div>
         </div>
 
         <div class="caja"><img src="fut1.jpg" alt="">
 			<div class="capa"></div>
 			<a class="enlace" href="#"> <i class="fas fa-futbol"></i></a>
-            <div class="titulo"> <a href="#">Ver noticias</a></div>
+            <div class="titulo"> <a href="calendario.php">Ver Partidos</a></div>
         </div>
 
         <div class="caja"><img src="fut2.jpg" alt="">
 			<div class="capa"></div>
 			<a class="enlace" href="#"> <i class="fas fa-futbol"></i></a>
-            <div class="titulo"> <a href="#">Ver noticias</a></div>
+            <div class="titulo"> <a href="tablas.php">Ver Tablas</a></div>
         </div>
 
         <div class="caja"><img src="fut3.jpg" alt="">
 			<div class="capa"></div>
 			<a class="enlace" href="#"> <i class="fas fa-futbol"></i></a>
-            <div class="titulo"> <a href="#">Ver noticias</a></div>
+            <div class="titulo"> <a href="tablas.php">Ver Tablas</a></div>
         </div>
 
         <div class="caja"><img src="fut4.jpg" alt="">
 			<div class="capa"></div>
 			<a class="enlace" href="#"> <i class="fas fa-futbol"></i></a>
-            <div class="titulo"> <a href="#">Ver noticias</a></div>
+            <div class="titulo"> <a href="tablas.php">Ver Tablas</a></div>
         </div>
 
         <div class="caja"><img src="fut5.jpg" alt="">
 			<div class="capa"></div>
 			<a class="enlace" href="#"> <i class="fas fa-futbol"></i></a>
-            <div class="titulo"> <a href="#">Ver noticias</a></div>
+            <div class="titulo"> <a href="tablas.php">Ver Tablas</a></div>
         </div>
     
 

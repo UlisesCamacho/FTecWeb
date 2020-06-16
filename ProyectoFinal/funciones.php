@@ -1,7 +1,7 @@
 <?php 
 function ConectarBD()
 {
-	$c = mysqli_connect("localhost","root","","cancerbero");
+	$c = mysqli_connect("localhost","root","","cb");
 	return $c;
 }
 function fechaSvr()

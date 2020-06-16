@@ -12,6 +12,44 @@ session_start();
     <link href="great.css" rel="stylesheet" type="text/css"  media="screen and (min-width: 981px)" />
     <link href="medium.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 980px)" />
     <link href="mini.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
+    <style type="text/css">
+    h2{
+        margin: auto;
+        text-align: center;
+        font-family:Arial, Helvetica, sans-serif;
+        color:white;
+        font-size: 50px;
+        
+        background-color: #2d572c;
+        width: 65%;
+    }
+    img{
+        text-align: center;
+    }
+    
+    .elemento{
+    width: 75%;
+    margin: auto;
+    margin-top: 0.0%;
+    overflow: hidden;
+    height: 40%;
+    font-size: 20px;
+    text-align: left;
+    border-top: 1px solid black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #18171c;
+    background-color: #DDDDDD;
+   
+}
+.contenedor{
+ 
+   
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+}
+
+</style>
 </head>
 <body>
     
@@ -67,7 +105,7 @@ session_start();
             <ul>
                
                
-                        <li><a href="#">Perfil</a></li>
+                        <li><a href="CanCerberoPortada.php">Inicio</a></li>
                         <li><a href="ligas.php">Ligas</a></li>
                         <li><a href="calendario.php">Calendario</a></li> 
                         <li><a href="tablas.php">Tablas</a></li>
@@ -78,7 +116,7 @@ session_start();
                         <?php 
                          if(!isset($_SESSION['idUsuario']))
                          {
-                            echo "<li><a href='#'>Contacto</a></li>";   
+                            echo "<li><a href='contacto.php'>Contacto</a></li>";   
                          }
                          else
                          {
@@ -88,7 +126,7 @@ session_start();
                                 echo "<li><a href='admi.php'>Admi</a></li>"; 
                             }
                             else{
-                                echo "<li><a href='#'>Contacto</a></li>";
+                                echo "<li><a href='contacto.php'>Contacto</a></li>";
                             }
                          }
                          
@@ -102,5 +140,31 @@ session_start();
     </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="menu.js"></script>
+    <?php 
+         include("funciones.php");
+         $contador=0;
+         $conn=ConectarBD();
+         $sql="SELECT nombreLiga, idLiga FROM ligas";
+         $rs=mysqli_query($conn,$sql);
+         echo "<br>";
+         echo "<div class=' contenedor'>";
+         while($datos=mysqli_fetch_array($rs))
+         {
+            echo "<h2>$datos[nombreLiga]<h2>";
+            echo "<div class='elemento'>";
+            $sqli= "SELECT nombreEquipo, idEquipo, imagenEquipo FROM equipos WHERE idLiga=". $datos['idLiga'];
+            $rsi=mysqli_query($conn,$sqli);
+            while($datosi=mysqli_fetch_array($rsi))
+            {
+                echo  "<img width='100px' height='70px' src='imagenEquipo.php?idE=".$datosi["idEquipo"]."'>". "      " . $datosi['nombreEquipo'] . "<br>";
+                //echo <img width = '100px' src = 'imagen.php?idI=" . $registro["idImagen"] . "'
+               // echo  "<img width='100px' src='imagenEquipo.php?idE=".$datosi["idEquipo"]."'>";
+            }
+            echo "</div>";
+           
+         }
+         echo "</div>";
 
-    
+         
+    ?>
+  

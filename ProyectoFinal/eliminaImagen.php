@@ -12,7 +12,7 @@ else{
         if($rs=mysqli_query($conn,$qry))
         {
             $msg="Se elimino la imagen correctamente";
-            header("location:http://localhost/Proyecto/galeria.php");
+            header("location:http://localhost/ProyectoFinal/galeria.php");
             
         }
         else{

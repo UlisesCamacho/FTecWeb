@@ -40,6 +40,17 @@ if(isset($_GET['txtNombre']) && isset($_GET['txtUsuario']) && isset($_GET['txtPw
     <title>Registro</title>
     <style type="text/css">
 	/* Contenedor del login */
+   .tituloPagina{
+    width: 95%;
+    margin: auto;
+    margin-top: 0.5%;
+    overflow: hidden;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 2px solid white;
+    color: white;
+}
    .alerta{
 	background-color: blue;
 	color: red;
@@ -127,6 +138,36 @@ input[type="reset"]:hover {
    opacity: 1;
    color: white;
 }
+.regreso{
+    width: 95%;
+	margin: auto;
+    overflow: hidden;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+body{
+background: url("futbolreg.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+.regreso{
+   margin:auto;
+   text-align: center;
+}
+.regreso a{
+   margin:auto;
+    width: 95%;
+	 color: white;
+    overflow: hidden;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
    </style>
 <script type="text/javascript">
 function verificaFRM()
@@ -147,7 +188,7 @@ function verificaFRM()
 </script>
 </head>
 <body>
-<h1>formulario para registrar usuario</h1>
+<div class="tituloPagina"><h2>Registro</h2></div>
 <div id="registro">
          <form action= "registro.php" method="GET" onsubmit="return verificaFRM()">
             <label>Nombre: </label>
@@ -163,5 +204,9 @@ function verificaFRM()
          </form>
       </div>
       <?php if($msg!="") echo "<p class='alerta'>$msg</p>" ?>
+      <br>
+      <br>
+      <br>
+      <div class="regreso"><a href="CanCerberoPortada.php">Regresar</a></div>
 </body>
 </html>

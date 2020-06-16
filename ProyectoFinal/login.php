@@ -10,6 +10,17 @@ session_start();
 	<title>Login</title>
 	<style type="text/css">
 	/* Contenedor del login */
+   .tituloPagina{
+    width: 95%;
+    margin: auto;
+    margin-top: 0.5%;
+    overflow: hidden;
+    height: 80px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 2px solid white;
+    color: white;
+}
 
 #login {
    background-color: black;
@@ -93,6 +104,27 @@ input[type="reset"]:hover {
    opacity: 1;
    color: white;
 }
+.regreso{
+   margin:auto;
+   text-align: center;
+}
+.regreso a{
+   margin:auto;
+    width: 95%;
+	 color: white;
+    overflow: hidden;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+body{
+background: url("editaimg.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
 	</style>
 </head>
 <?php 
@@ -126,6 +158,7 @@ if(isset($_GET['txtNombre']) && isset($_GET['txtPassword'])) //que las variables
 }
 ?>
 <body>
+<div class="tituloPagina"><h2>Login</h2></div>
 <div id="login">
          <form action= "login.php" method="GET">
             <label>Usuario: </label>
@@ -137,11 +170,15 @@ if(isset($_GET['txtNombre']) && isset($_GET['txtPassword'])) //que las variables
 			
 			
          </form>
+
       </div>
 </form>
 <?php
 if($msg!="") echo "<p>$msg</p>";
 ?>
+<br>
+<br>
+<div class="regreso"><a href="CanCerberoPortada.php">Regresar</a></div>
 </body>
 </html>
 

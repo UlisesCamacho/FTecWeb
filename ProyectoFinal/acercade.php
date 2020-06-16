@@ -12,6 +12,20 @@ session_start();
     <link href="great.css" rel="stylesheet" type="text/css"  media="screen and (min-width: 981px)" />
     <link href="medium.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px) and (max-width: 980px)" />
     <link href="mini.css" rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" />
+    <style type="text/css">
+    .contenedor{
+ width: 85%;
+ height: 50%;
+ margin: auto;
+ display: flex;
+ flex-direction:column;
+ background-color: black;
+ text-align: center;
+ color: white;
+ font-size: 30px;
+}
+
+    </style>
 </head>
 <body>
     
@@ -67,7 +81,7 @@ session_start();
             <ul>
                
                
-                        <li><a href="#">Perfil</a></li>
+                        <li><a href="CanCerberoPortada.php">Inicio</a></li>
                         <li><a href="ligas.php">Ligas</a></li>
                         <li><a href="calendario.php">Calendario</a></li> 
                         <li><a href="tablas.php">Tablas</a></li>
@@ -78,7 +92,7 @@ session_start();
                         <?php 
                          if(!isset($_SESSION['idUsuario']))
                          {
-                            echo "<li><a href='#'>Contacto</a></li>";   
+                            echo "<li><a href='contacto.php'>Contacto</a></li>";   
                          }
                          else
                          {
@@ -88,7 +102,7 @@ session_start();
                                 echo "<li><a href='admi.php'>Admi</a></li>"; 
                             }
                             else{
-                                echo "<li><a href='#'>Contacto</a></li>";
+                                echo "<li><a href='contacto.php'>Contacto</a></li>";
                             }
                          }
                          
@@ -102,3 +116,11 @@ session_start();
     </div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="menu.js"></script>
+    <br>
+    <br>
+    <br>
+    <div class="contenedor">Probablemente al leer este título te parezca demasiado, sobre todo teniendo en cuenta que hay cientos de paginas de fútbol y que algunos llevan muchos años dedicados por entero a ello. Y sería demasiado si hablásemos de que el nuestro es el mejor de todos los tiempos, pero no es así. Al menos no en parte.
+
+Sabemos que para llegar a ganarnos este título tenemos que seguir trabajando, 
+
+Tratamos el fútbol con respeto, pero también de una forma divertida y amena. Al fin y al cabo, se trata de un juego y lo más importante es divertirse con él, bien sea practicándolo, viéndolo por la televisión o leyendo acerca de él. Por eso ofrecemos una visión un tanto diferente pero siempre real y contrastada de nuestro deporte preferido.<div>
